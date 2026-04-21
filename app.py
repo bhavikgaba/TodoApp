@@ -5,13 +5,13 @@ FILE_NAME = "tasks.json"
 def load_tasks():
     if not os.path.exists(FILE_NAME):
         return []
-    with open("tasks.json", 'r') as f:
+    with open(FILE_NAME, 'r') as f:
         try:
             return json.load(f)
         except:
             return []
 def save_tasks(tasks):
-    with open("tasks.json", "w") as f:
+    with open(FILE_NAME, "w") as f:
         json.dump(tasks, f, indent = 4)
 st.title("TODO App")
 tasks = load_tasks()
